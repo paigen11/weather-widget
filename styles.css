@@ -1,0 +1,30 @@
+body{
+	background-image: url("happy_wallpaper.jpg");
+	background-size:cover;
+	background-repeat:no-repeat;
+}
+
+h1{
+	text-align: center;
+}
+
+.body-wrapper{
+	background-color: #0080ff;
+	border-radius: 7px;
+}
+canvas {
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    width: 800px;
+}
+
+.weatherForm input{
+	width: 75%;
+}
+.currentConditions, .days-ahead{
+	text-align: right;
+	background-color: #0059b3;
+}

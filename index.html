@@ -19,13 +19,82 @@
 	</head>
 
 <body>
-	<form class="weatherForm">
-		<input type ="text" name="city" class="city"> 
-	</form>	
-	
-	<canvas id="currentTemp" height="300px" width="300px">
-		<!-- the temperature done canvas-style -->
-	</canvas>
+	<div class="container header-wrapper">
+		<div class="row">
+			<div class="col-sm-12">
+				<h1>Paige's Weather Widget</h1>
+			</div>	
+		</div>
+	</div>
+	<div class="container body-wrapper">
+		<div class="row">
+			<div class="col-sm-3 col-sm-offset-3">
+				<form class="weatherForm">
+					<input type ="text" name="city" class="city" placeholder="Type your city's name here"> 
+				</form>
+			</div>
+			<div class="col-sm-3 col-sm-offset-2">
+				<div class="currentConditions">
+					<p>Current Conditions:
+					<br>
+					<span class="temp">XX</span> &ordm;F
+					<br>
+					<span class="weather">weather conditions</span>
+					</p>
+					<br>
+				</div>
+			</div>			
+		</div>
+		<div class="row">
+			<div class="col-sm-5 col-sm-offset-3 canvas">
+				<canvas id="currentTemp" height="600px" width="300px">
+					<!-- the temperature done canvas-style -->
+				</canvas>
+			</div>
+			<div class="col-sm-3 days-ahead">
+				<div class="col-sm-12">
+					<p>The Week Ahead</p>
+					<br>
+				</div>
+				<div class="col-sm-12">
+					<p>Tomorrow's Forecast:
+					<br>
+					<span class="temp1">XX</span> &ordm;F 
+					<br>
+					<span class="weather1">weather conditions</span>
+					</p>
+					<br>
+				</div>
+				<div class="col-sm-12">
+					<p>Three Days Out:
+					<br>
+					<span class="temp2">XX</span> &ordm;F 
+					<br>
+					<span class="weather2">weather conditions</span>
+					</p>
+					<br>
+				</div>
+				<div class="col-sm-12">
+					<p>Four Days Out:
+					<br>
+					<span class="temp3">XX</span> &ordm;F 
+					<br>
+					<span class="weather3">weather conditions</span>
+					</p>
+					<br>
+				</div>
+				<div class="col-sm-12">
+					<p>Five Days Out:
+					<br>
+					<span class="temp4">XX</span> &ordm;F 
+					<br>
+					<span class="weather4">weather conditions</span>
+					</p>
+					<br>
+				</div>
 
+			</div>	
+		</div>	
+	</div>
 </body>
 </html>
