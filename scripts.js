@@ -17,6 +17,7 @@ $(document).ready(function(){
 		canvas = document.getElementById('currentTemp');
 		context = canvas.getContext('2d');
 		currPerc = 0;
+		currentTemp = 0;
 
 		// get the user input
 		var cityText = $(".city").val();
@@ -32,7 +33,9 @@ $(document).ready(function(){
 			temp.html(currentTemp);
 
 			animateTemp(0);
+			animateTherm2(0);
 
+			//set temps for future days
 			temp1 = weatherData.list[5].main.temp;
 			var temp1elem = $(".temp1");
 			temp1elem.html(temp1);
@@ -49,10 +52,7 @@ $(document).ready(function(){
 			var temp4elem = $(".temp4");
 			temp4elem.html(temp4);
 
-			temp5 = weatherData.list[37].main.temp;
-			var temp5elem = $(".temp5");
-			temp5elem.html(temp5);
-
+			//set weather for future days
 			currentWeather = weatherData.list[0].weather[0].description;
 			var weather = $('.weather');
 			weather.html(currentWeather);
@@ -73,9 +73,26 @@ $(document).ready(function(){
 			var weather4elem = $('.weather4');
 			weather4elem.html(weather4);
 
-			weather4 = weatherData.list[37].weather[0].description;
-			var weather5elem = $('.weather5');
-			weather5elem.html(weather5);
+			//set weather icons for future days
+			weatherIcon = weatherData.list[0].weather[0].icon;
+			var src1 = "http://openweathermap.org/img/w/"+weatherIcon+".png";
+                $('.weather-icon').attr("src", src1);
+
+            weatherIcon1 = weatherData.list[5].weather[0].icon;
+			var src2 = "http://openweathermap.org/img/w/"+weatherIcon1+".png";
+                $('.weather-icon1').attr("src", src2); 
+
+            weatherIcon2 = weatherData.list[13].weather[0].icon;
+			var src3 = "http://openweathermap.org/img/w/"+weatherIcon2+".png";
+                $('.weather-icon2').attr("src", src3); 
+
+            weatherIcon3 = weatherData.list[21].weather[0].icon;
+			var src4 = "http://openweathermap.org/img/w/"+weatherIcon3+".png";
+                $('.weather-icon3').attr("src", src4); 
+
+            weatherIcon4 = weatherData.list[29].weather[0].icon;
+			var src5 = "http://openweathermap.org/img/w/"+weatherIcon4+".png";
+                $('.weather-icon4').attr("src", src5);             
 
 		}); //end of JSON function
 
@@ -100,22 +117,47 @@ $(document).ready(function(){
 
 		context.lineWidth = 3;
 		context.strokeStyle = '#000';
-		context.fillStyle = '#FF0000';
-		context.fill();
 		context.stroke();
 	}
+
+	function animateTherm2(){
+		
+		context.beginPath();
+		context.arc(61, 220, 40, 5.6, 1.2*Math.PI);
+		// draw that circle
+
+		var fillColor;
+		if(currentTemp < 30){
+			fillColor = "blue";
+		}else if((currentTemp > 30) && (currentTemp < 80)){
+			fillColor = "green";
+		}else if(currentTemp >80){
+			fillColor="red";
+		}
+		context.fillStyle = fillColor;
+		context.fill();
+	}	
 	
 	function animateTemp(current){
-		
+
 		context.beginPath();
 		context.moveTo(60,200);
 		context.lineTo(60, 200 - (200*current));
-		var tempColor = '#FF0000';
+		// var tempColor = '#FF0000';
+		var tempColor; 
+		if(currentTemp < 30){
+			tempColor = "blue";
+		}else if((currentTemp > 30) && (currentTemp < 80)){
+			tempColor = "green";
+		}else if(currentTemp >80){
+			tempColor="red";
+		}
 		context.strokeStyle = tempColor; //changes line color
 		context.lineWidth = 55; //sets line width
 		context.stroke();
 
-		context.fillText(currentTemp, 100, 100);
+		context.font="15px cursive";
+		context.fillText(currentTemp, 100, 35);
 
 		currPerc++;
 		if(currPerc < currentTemp){
