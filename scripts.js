@@ -31,6 +31,9 @@ $(document).ready(function(){
 			currentTemp = weatherData.list[0].main.temp;
 			var temp = $(".temp");
 			temp.html(currentTemp);
+			currentSkies=weatherData.list[0].weather[0].id;
+			weatherBg(currentSkies);
+			console.log(weatherData);
 
 			animateTemp(0);
 			animateTherm2(0);
@@ -97,7 +100,23 @@ $(document).ready(function(){
 		}); //end of JSON function
 
 	}); //end of weather form submission
-		
+	
+	function weatherBg(weatherNum){
+		if(weatherNum == 800){
+			var getImageSrc = 'happy_wallpaper.jpg';
+			$('body').css('background-image', 'url(' + getImageSrc + ')');
+		}else if(((weatherNum >= 200) && (weatherNum <= 321)) || ((weatherNum >= 500) && (weatherNum< 600))){
+			getImageSrc = 'rainy.jpg';
+			$('body').css('background-image', 'url(' + getImageSrc + ')');
+		}else if((weatherNum >= 600) && (weatherNum < 700)){
+			getImageSrc = 'snowy.jpeg';
+			$('body').css('background-image', 'url(' + getImageSrc + ')');
+		}else if((weatherNum >= 801) && (weatherNum <= 804)){
+			getImageSrc = 'cloudy.jpeg';
+			$('body').css('background-image', 'url(' + getImageSrc + ')');
+		}
+	};
+
 	function animateTherm(){
 		// let's make sure canvas is empty
 		context.clearRect(0,0,600,300);
@@ -121,7 +140,7 @@ $(document).ready(function(){
 	}
 
 	function animateTherm2(){
-		
+		// context.clearRect(0,0,600,300);
 		context.beginPath();
 		context.arc(61, 220, 40, 5.6, 1.2*Math.PI);
 		// draw that circle
@@ -139,7 +158,8 @@ $(document).ready(function(){
 	}	
 	
 	function animateTemp(current){
-
+		
+		context.clearRect(32, 2, 56, 195);
 		context.beginPath();
 		context.moveTo(60,200);
 		context.lineTo(60, 200 - (200*current));
@@ -155,9 +175,6 @@ $(document).ready(function(){
 		context.strokeStyle = tempColor; //changes line color
 		context.lineWidth = 55; //sets line width
 		context.stroke();
-
-		context.font="15px cursive";
-		context.fillText(currentTemp, 100, 35);
 
 		currPerc++;
 		if(currPerc < currentTemp){
