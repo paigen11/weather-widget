@@ -9,6 +9,7 @@ body{
 h1{
 	text-align: center;
 	font-weight: bold;
+	color: white;
 }
 
 h4, p{
@@ -19,6 +20,10 @@ p{
 	font-size: 18px;
 }
 
+.currentConditions{
+	padding: 10px;
+	font-size: 24px;
+}
 
 .body-wrapper{
 	background-color: #0080ff;
