@@ -20,13 +20,13 @@ Paige Niedringhaus
 ##Screenshots
 ---
 Starting screen users see before typing in a city name
-![alt text]()
+![alt text](https://github.com/paigen11/weather-widget/blob/master/screenshots/home-screen.png 'home-screen.png')
 
 Screen Displayed After Users Enter City
-![alt text]()
+![alt text](https://github.com/paigen11/weather-widget/blob/master/screenshots/updated-screen.png 'updated-screen.png')
 
 Another Screen Displayed After Users Search Another City
-![alt text]()
+![alt text](https://github.com/paigen11/weather-widget/blob/master/screenshots/second-updated-screen.png 'second-updated-screen.png')
 
 ##Further Info
 ---
