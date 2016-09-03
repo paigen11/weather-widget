@@ -11,7 +11,7 @@ A weather widget made with the HTML canvas, CSS, JavaScript, jQuery and the Open
 
 ##Link to Github documents 
 ---
-[Github]()
+[Github](https://github.com/paigen11/weather-widget)
 
 ##Authors
 ---
