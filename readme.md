@@ -2,6 +2,10 @@
 ----
 A weather widget made with the HTML canvas, CSS, JavaScript, jQuery and the Open Weather Map API. The user can write in the name of any city and be shown the current conditions, the upcoming forecast and the current temp with a responsive thermometer and background.
 
+##Live Demo
+---
+[Live demo](http://paigeniedringhaus.com/weatherApp/)
+
 ##Languages Used
 ---
   * HTML
