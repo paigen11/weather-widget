@@ -4,7 +4,7 @@ A weather widget made with the HTML canvas, CSS, JavaScript, jQuery and the Open
 
 ##Live Demo
 ---
-[Live demo](http://paigeniedringhaus.com/weatherApp/)
+[Live demo](http://pn-weather-widget.surge.sh)
 
 ##Languages Used
 ---
